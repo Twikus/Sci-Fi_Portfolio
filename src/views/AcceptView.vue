@@ -36,6 +36,7 @@ const accept = () => {
         <p>I created this website to resemble a game/sci-fi interface, with all the text reflecting this theme.</p>
         <p>You will find "achievements" or "quests" that show the progress in my professional life and the projects I am currently working on.</p>
         <div class="button_container">
+          <small>FOR A COMPLETE IMMERSION, VISIT THIS WEBSITE ON COMPUTER</small>
           <button @click="accept">PLAY</button>
         </div>
       </div>
@@ -76,13 +77,21 @@ const accept = () => {
         margin-bottom: 20px;
       }
 
+      
       .button_container {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;        
         
+        small {
+          font-size: 14px;
+          color: var(--grey-primary);
+          margin-top: 70px;
+        }
+
         button {
           width: 260px;
-          margin-top: 70px;
+          margin-top: 20px;
           font-size: 20px;
           font-family: 'Big Shoulders Display', sans-serif;
           font-weight: 700;

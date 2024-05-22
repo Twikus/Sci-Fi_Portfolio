@@ -4,7 +4,7 @@ import { RouterView } from 'vue-router'
 
 <template>
   <body>
-    <img src="@/assets/img/layout.png" alt="layout" class="layout" />
     <RouterView />
+    <img src="@/assets/img/layout.png" alt="layout" class="layout" />
   </body>
 </template>

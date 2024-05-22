@@ -4,6 +4,8 @@
 /* Color variables */
 :root {
   --red-primary : #E84A4A;
+  --green-primary : #7DFF68;
+  --grey-primary : rgba(255, 255, 255, 0.6);
 }
 
 *,
@@ -16,10 +18,11 @@
 
 body {
   min-height: 100vh;
+  margin: 0 40px;
   overflow: hidden !important;
   font-family: 'Iceland', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
   color: white;
-  background-color: black;
+  background-color: #000;
 }
