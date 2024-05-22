@@ -1,17 +1,26 @@
 <script setup>
 import Loader from '@/components/Loader.vue';
+import { useAcceptStore } from '@/stores/accept';
+
+const acceptStore = useAcceptStore();
 
 let loading = ref(true);
-  let showContent = ref(false);
+let showContent = ref(false);
 
-  onMounted(() => {
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false;
     setTimeout(() => {
-      loading.value = false;
-      setTimeout(() => {
-        showContent.value = true;
-      }, 1000);
-    }, 2500);
-  });
+      showContent.value = true;
+    }, 1000);
+  }, 2500);
+});
+
+// quand on clique sur le bouton, on change la valeur de la variable accept dans le store
+const accept = () => {
+  acceptStore.accept();
+}
+
 </script>
 
 <template>
@@ -28,7 +37,7 @@ let loading = ref(true);
         <p>I created this website to resemble a game/sci-fi interface, with all the text reflecting this theme.</p>
         <p>You will find "achievements" or "quests" that show the progress in my professional life and the projects I am currently working on.</p>
         <div class="button_container">
-          <button type="submit">PLAY</button>
+          <button @click="accept">PLAY</button>
         </div>
       </div>
     </main>
