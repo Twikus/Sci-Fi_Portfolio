@@ -1,35 +1,42 @@
 <script setup>
 import Loader from '@/components/Loader.vue';
-import { ref, onMounted } from 'vue';
+import { useAcceptStore } from '@/stores/accept';
 
-let loading = ref(true);
-let showContent = ref(false);
+const acceptStore = useAcceptStore();
+
+const loading = ref(true);
+const showContent = ref(false);
 
 onMounted(() => {
+  setTimeout(() => {
+    loading.value = false;
     setTimeout(() => {
-      loading.value = false;
-      setTimeout(() => {
-        showContent.value = true;
-      }, 2000);
-    }, 2500);
-  });
+      showContent.value = true;
+    }, 1000);
+  }, 2500);
+});
+
+const accept = () => {
+  acceptStore.accept();
+}
+
 </script>
 
 <template>
-  <Transition name="fade">
+  <Transition name="fade-out" >
     <Loader v-if="loading" />
   </Transition>
-  <Transition name="fade-in">
+  <Transition name="fade-in" >
     <main v-if="showContent" class="lp_layout">
       <div class="first_container">
         <h1>HI!</h1>
       </div>
       <div class="secondary_container">
         <h2>WELCOME ON MY PERSONAL WEBSITE</h2>
-        <p>I designed this website to resemble a game/sci-fi interface, with all the text reflecting this theme.</p>
+        <p>I created this website to resemble a game/sci-fi interface, with all the text reflecting this theme.</p>
         <p>You will find "achievements" or "quests" that show the progress in my professional life and the projects I am currently working on.</p>
         <div class="button_container">
-          <button type="submit">PLAY</button>
+          <button @click="accept">PLAY</button>
         </div>
       </div>
     </main>
@@ -37,20 +44,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity 1s;
-  }
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-  }
-
-  .fade-in-enter-active {
-    transition: opacity 1s;
-  }
-  .fade-in-enter {
-    opacity: 0;
-  }
-
   .lp_layout {
     display: flex;
     justify-content: center;
