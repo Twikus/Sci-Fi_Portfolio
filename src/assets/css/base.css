@@ -6,6 +6,7 @@
   --red-primary : #E84A4A;
   --green-primary : #7DFF68;
   --grey-primary : rgba(255, 255, 255, 0.6);
+  --grey-lower: rgba(255, 255, 255, 0.13);
 }
 
 *,

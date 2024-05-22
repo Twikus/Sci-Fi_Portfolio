@@ -47,12 +47,49 @@ const addClick = () => {
         </div>
     </header>
 
-    <div>
+    <div class="main-container">
         <div class="content-right">
             <div class="top">
-                
+                <div class="image-container">
+                    <div class="top-left"></div>
+                    <div class="top-right"></div>
+                    <div class="bottom-right"></div>
+                    <div class="bottom-left"></div>
+                    <img src="/src/assets/img/profil.jpeg" alt="profile image">
+                </div>
+                <ul>
+                    <li>
+                        <p class="label">NAME</p>
+                        <p class="text">AXEL DUQUELZAR</p>
+                    </li>
+                    <li>
+                        <p class="label">OCCUPATION</p>
+                        <p class="text">WEB DEVELOPER</p>
+                    </li>
+                    <li>
+                        <p class="label">CURRENT CORPORATION</p>
+                        <p class="text">SPLIIIT</p>
+                    </li>
+                    <li>
+                        <p class="label">AVAILABILITY</p>
+                        <div class="open-hire">
+                            <p>OPEN FOR HIRE</p>
+                            <img src="/src/assets/img/hire.svg" alt="hire icon">
+                        </div>
+                    </li>
+                    <li>
+                        <p class="label">SOCIAL</p>
+                        <div class="open-connection">
+                            <p>OPEN CONNECTION</p>
+                            <img src="/src/assets/img/open.svg" alt="open in new icon">
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="bottom"></div>
+            <div class="bottom">
+                <p class="label">MOTTO :</p>
+                <p class="text">Est socia mortis homini vita ingloria</p>
+            </div>
         </div>
         <div class="content-left"></div>
     </div>
@@ -150,4 +187,152 @@ header {
         }
     }
 }
+
+.main-container {
+    .content-right {
+        width: min-content;
+        height: 83vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .top {
+            .image-container {
+                width: 190px;
+                height: 190px;
+                border: 1px solid var(--grey-lower);
+                background-color: transparent;
+                position: relative;
+                margin: 20px 3px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .top-left, .top-right, .bottom-right, .bottom-left {
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                }
+
+                .top-left {
+                    top: -3px;
+                    left: -3px;
+                    border-top: 3px solid var(--red-primary);
+                    border-left: 3px solid var(--red-primary);
+                }
+
+                .top-right {
+                    top: -3px;
+                    right: -3px;
+                    border-top: 3px solid var(--red-primary);
+                    border-right: 3px solid var(--red-primary);
+                }
+
+                .bottom-right {
+                    bottom: -3px;
+                    right: -3px;
+                    border-bottom: 3px solid var(--red-primary);
+                    border-right: 3px solid var(--red-primary);
+                }
+
+                .bottom-left {
+                    bottom: -3px;
+                    left: -3px;
+                    border-bottom: 3px solid var(--red-primary);
+                    border-left: 3px solid var(--red-primary);
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    margin-bottom: 20px;
+
+                    p {
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+
+            .open-hire {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                background-color: var(--red-primary);
+                padding-left: 5px;
+                
+                p {                    
+                    color: black;
+                    font-size: 18px;
+                    font-family: 'Big Shoulders Display', sans-serif;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                }
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            .open-connection {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                border: 2px solid var(--red-primary);
+                padding-left: 5px;
+                cursor: pointer;
+                
+                p {                    
+                    color: var(--red-primary);
+                    font-size: 18px;
+                    font-family: 'Big Shoulders Display', sans-serif;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                }
+
+                .icon {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            .label {
+                font-size: 14px;
+            }
+
+            .text {
+                font-size: 18px;
+                font-family: 'Big Shoulders Display', sans-serif;
+                font-weight: 700;
+                color: var(--red-primary);
+            }
+        }
+
+        .bottom {
+            .label {
+                font-size: 18px;
+                color: var(--red-primary);
+                letter-spacing: 1px;
+            }
+
+            .text {
+                font-size: 16px;
+                font-family: 'Big Shoulders Display', sans-serif;
+                color: var(--grey-primary);
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
 </style>
