@@ -1,6 +1,5 @@
 <script setup>
 import Loader from '@/components/Loader.vue';
-import { ref, onMounted } from 'vue';
 
 let loading = ref(true);
   let showContent = ref(false);
