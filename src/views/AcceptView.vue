@@ -4,8 +4,8 @@ import { useAcceptStore } from '@/stores/accept';
 
 const acceptStore = useAcceptStore();
 
-let loading = ref(true);
-let showContent = ref(false);
+const loading = ref(true);
+const showContent = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
@@ -16,7 +16,6 @@ onMounted(() => {
   }, 2500);
 });
 
-// quand on clique sur le bouton, on change la valeur de la variable accept dans le store
 const accept = () => {
   acceptStore.accept();
 }
@@ -106,46 +105,5 @@ const accept = () => {
     }
 
 
-  }
-
-  /* Transitions */
-
-  .fade-out-leave-active {
-    animation: fade-out .5s;
-  }
-
-  @keyframes fade-out {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      display: none;
-      opacity: 0;
-    }
-  }
-
-  .fade-in-enter {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .fade-in-enter-active {
-    animation: fade-in 1s;
-  }
-
-  @keyframes fade-in {
-    0% {
-      visibility: visible;
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
   }
 </style>

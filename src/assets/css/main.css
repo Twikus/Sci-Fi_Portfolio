@@ -1,4 +1,5 @@
 @import './base.css';
+@import './transitions.css';
 
 .layout {
     position: absolute;
