@@ -3,30 +3,30 @@ import Loader from '@/components/Loader.vue';
 import { ref, onMounted } from 'vue';
 
 let loading = ref(true);
-let showContent = ref(false);
+  let showContent = ref(false);
 
-onMounted(() => {
+  onMounted(() => {
     setTimeout(() => {
       loading.value = false;
       setTimeout(() => {
         showContent.value = true;
-      }, 2000);
+      }, 1000);
     }, 2500);
   });
 </script>
 
 <template>
-  <Transition name="fade">
+  <Transition name="fade-out" >
     <Loader v-if="loading" />
   </Transition>
-  <Transition name="fade-in">
+  <Transition name="fade-in" >
     <main v-if="showContent" class="lp_layout">
       <div class="first_container">
         <h1>HI!</h1>
       </div>
       <div class="secondary_container">
         <h2>WELCOME ON MY PERSONAL WEBSITE</h2>
-        <p>I designed this website to resemble a game/sci-fi interface, with all the text reflecting this theme.</p>
+        <p>I created this website to resemble a game/sci-fi interface, with all the text reflecting this theme.</p>
         <p>You will find "achievements" or "quests" that show the progress in my professional life and the projects I am currently working on.</p>
         <div class="button_container">
           <button type="submit">PLAY</button>
@@ -37,20 +37,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity 1s;
-  }
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-  }
-
-  .fade-in-enter-active {
-    transition: opacity 1s;
-  }
-  .fade-in-enter {
-    opacity: 0;
-  }
-
   .lp_layout {
     display: flex;
     justify-content: center;
@@ -112,5 +98,46 @@ onMounted(() => {
     }
 
 
+  }
+
+  /* Transitions */
+
+  .fade-out-leave-active {
+    animation: fade-out .5s;
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      display: none;
+      opacity: 0;
+    }
+  }
+
+  .fade-in-enter {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .fade-in-enter-active {
+    animation: fade-in 1s;
+  }
+
+  @keyframes fade-in {
+    0% {
+      visibility: visible;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 </style>
