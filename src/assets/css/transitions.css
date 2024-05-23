@@ -10,17 +10,16 @@
       opacity: 0.5;
     }
     100% {
-      /* display: none; */
       opacity: 0;
     }
   }
 
-  .fade-in-enter {
+  .fade-in-enter, .fade-in-leave-to {
     opacity: 0;
     visibility: hidden;
   }
 
-  .fade-in-enter-active {
+  .fade-in-enter-active, .fade-in-leave-active {
     animation: fade-in 1s;
   }
 

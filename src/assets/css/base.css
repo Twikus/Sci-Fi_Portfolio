@@ -19,11 +19,9 @@
 
 body {
   min-height: 100vh;
-  margin: 0 40px;
   overflow: hidden !important;
   font-family: 'Iceland', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
   color: white;
-  background-color: #000;
 }
