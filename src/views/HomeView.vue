@@ -1,10 +1,12 @@
 <script setup>
-import Layout from '@/views/Layout.vue';
+import Layout from '@/components/Layout.vue';
+import Navigation from '@/components/Navigation.vue';
 </script>
 
 <template>
     <div class="body-container">
         <Layout />
+        <Navigation />
     </div>
 </template>
 
@@ -12,4 +14,5 @@ import Layout from '@/views/Layout.vue';
 .body-container {
     margin: 0 40px;
 }
+   
 </style>
