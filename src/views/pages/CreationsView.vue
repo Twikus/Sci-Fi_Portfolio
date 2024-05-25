@@ -1,5 +1,5 @@
 <template>
     <div>
-        Home
+        creations
     </div>
 </template>
