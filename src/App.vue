@@ -1,10 +1,10 @@
-<script setup>
-import { RouterView } from 'vue-router'
+<script setup lang="ts">
+import Home from '@/views/index.vue'
 </script>
 
 <template>
   <body>
-    <RouterView />
+    <Home />
     <img src="@/assets/img/layout.png" alt="layout" class="layout" />
     <div class="black-opacity" ></div>
     <video autoplay loop muted class="video">

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useAcceptStore } from '@/stores/accept';
 
-import AcceptView from '@/views/AcceptView.vue';
+import AcceptModal from '@/components/AcceptModal.vue';
 import HomeView from './HomeView.vue';
 
 const acceptStore = useAcceptStore();
@@ -14,6 +14,6 @@ watch(() => acceptStore.isAccepted, (value) => {
 </script>
 
 <template>
-    <AcceptView v-if="!isAccepted"/>
+    <AcceptModal v-if="!isAccepted"/>
     <HomeView v-if="isAccepted"/>    
 </template>

@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { RouterView } from 'vue-router'
 import { playClick } from '@/helper'
+import { useSoundStore } from '@/stores/sound';
+
+const soundStore = useSoundStore();
 
 const isClicked = ref(false) 
 const soundEffects = ref(true)
@@ -20,133 +24,144 @@ const addClick = () => {
 }
 
 const toggleSoundEffects = () => {
-    soundEffects.value = !soundEffects.value
-    playClick(soundEffects.value)
+    soundStore.toggleSoundEffects()
+    playClick(soundStore.soundEffects)
 }
 
 const toggleMusic = () => {
-    music.value = !music.value
-    playClick(soundEffects.value)
+    soundStore.toggleMusic()
+    playClick(soundStore.music)
 }
 
 </script>
 
 <template>
-    <audio src="/src/assets/audio/ambient.mp3" autoplay loop v-if="music"/>
-    <header>
-        <div class="header-left">
-            <div>
-                <span class="number">22</span>
-                <span class="text">LEVEL</span>
-            </div>
-            <div>
-                <input v-if="!isClicked" type="button" value="+" @click="addClick" class="check-btn" />
-                <input v-if="isClicked" type="button" value="✓" disabled class="check-btn" />
-                <span class="number">{{ click }}</span>
-                <span class="text">COINS AWARDED</span>
-            </div>
-        </div>
-        <div class="header-right">
-            <ul>
-                <li>
-                    <RouterLink class="link" to="/credits">CREDITS</RouterLink>
-                </li>
-                <li>
-                    <p>SERVER TIME : <span>{{ serverTime }}</span></p>
-                </li>
-                <li>
-                    <p>LOCAL TIME : <span>{{ localTime }}</span></p>
-                </li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="main-container">
-        <div class="content-left">
-            <div class="top">
-                <div class="image-container">
-                    <div class="top-left"></div>
-                    <div class="top-right"></div>
-                    <div class="bottom-right"></div>
-                    <div class="bottom-left"></div>
-                    <img src="/src/assets/img/profil.jpeg" alt="profile image">
+    <div class="layout-container">
+        <audio src="/src/assets/audio/ambient.mp3" autoplay loop v-if="soundStore.music"/>
+        <header>
+            <div class="header-left">
+                <div>
+                    <span class="number">22</span>
+                    <span class="text">LEVEL</span>
                 </div>
+                <div>
+                    <input v-if="!isClicked" type="button" value="+" @click="addClick" class="check-btn" />
+                    <input v-if="isClicked" type="button" value="✓" disabled class="check-btn" />
+                    <span class="number">{{ click }}</span>
+                    <span class="text">COINS AWARDED</span>
+                </div>
+            </div>
+            <div class="header-right">
                 <ul>
                     <li>
-                        <p class="label">NAME</p>
-                        <p class="text">AXEL DUQUELZAR</p>
+                        <RouterLink class="link" to="/credits">CREDITS</RouterLink>
                     </li>
                     <li>
-                        <p class="label">OCCUPATION</p>
-                        <p class="text">WEB DEVELOPER</p>
+                        <p>SERVER TIME : <span>{{ serverTime }}</span></p>
                     </li>
                     <li>
-                        <p class="label">CURRENT CORPORATION</p>
-                        <p class="text">SPLIIIT</p>
-                    </li>
-                    <li>
-                        <p class="label">AVAILABILITY</p>
-                        <div class="open-hire">
-                            <p>OPEN FOR HIRE</p>
-                            <img src="/src/assets/img/hire.svg" alt="hire icon">
-                        </div>
-                    </li>
-                    <li>
-                        <p class="label">SOCIAL</p>
-                        <div class="open-connection">
-                            <p>OPEN CONNECTION</p>
-                            <img src="/src/assets/img/open.svg" alt="open in new icon">
-                        </div>
+                        <p>LOCAL TIME : <span>{{ localTime }}</span></p>
                     </li>
                 </ul>
             </div>
-            <div class="bottom">
-                <p class="label">MOTTO :</p>
-                <p class="text">Est socia mortis homini vita ingloria</p>
-            </div>
-        </div>
-        <div class="content-right">
-            <div class="top">
-                <div class="active-quest-container">
-                    <div class="header">
-                        <span class="label">ACTIVE QUEST</span>
-                        <p class="text-grey">MOTOVS - THE MOTORCYCLE COMPARATOR</p>
+        </header>
+    
+        <div class="main-container">
+            <div class="content-left">
+                <div class="top">
+                    <div class="image-container">
+                        <div class="top-left"></div>
+                        <div class="top-right"></div>
+                        <div class="bottom-right"></div>
+                        <div class="bottom-left"></div>
+                        <img src="/src/assets/img/profil.jpeg" alt="profile image">
                     </div>
-                    <div class="body">
-                        <div>
-                            <p class="label">QUEST NAME</p>
-                            <p class="text">MOTOVS</p>
+                    <ul>
+                        <li>
+                            <p class="label">NAME</p>
+                            <p class="text">AXEL DUQUELZAR</p>
+                        </li>
+                        <li>
+                            <p class="label">OCCUPATION</p>
+                            <p class="text">WEB DEVELOPER</p>
+                        </li>
+                        <li>
+                            <p class="label">CURRENT CORPORATION</p>
+                            <p class="text">SPLIIIT</p>
+                        </li>
+                        <li>
+                            <p class="label">AVAILABILITY</p>
+                            <div class="open-hire">
+                                <p>OPEN FOR HIRE</p>
+                                <img src="/src/assets/img/hire.svg" alt="hire icon">
+                            </div>
+                        </li>
+                        <li>
+                            <p class="label">SOCIAL</p>
+                            <div class="open-connection">
+                                <p>OPEN CONNECTION</p>
+                                <img src="/src/assets/img/open.svg" alt="open in new icon">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom">
+                    <p class="label">MOTTO :</p>
+                    <p class="text">EST SOCIA MORTIS HOMINI VITA INGLORIA</p>
+                </div>
+            </div>
+            <div class="content-center">
+                <div class="top-left"></div>
+                <div class="top-right"></div>
+                <div class="bottom-right"></div>
+                <div class="bottom-left"></div>
+                <div class="container-router-view">
+                    <RouterView />
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="top">
+                    <div class="active-quest-container">
+                        <div class="header">
+                            <span class="label">ACTIVE QUEST</span>
+                            <p class="text-grey">MOTOVS - THE MOTORCYCLE COMPARATOR</p>
                         </div>
-                        <div>
-                            <p class="label">GOAL</p>
-                            <p class="text-grey">BUILD THIS WEBSITE. CREATE A WEBSITE TO COMPARE DIFFERENT MOTORCYCLE STATS</p>
-                        </div>
-                        <div>
-                            <p class="label">REWARDS</p>
-                            <div class="rewards-container">
-                                <div>
-                                    <img src="/src/assets/img/rewards/5.png" alt="reward +5">
-                                    <span class="text-grey">+5</span>
-                                </div>
-                                <div>
-                                    <img src="/src/assets/img/rewards/25.png" alt="reward +25">
-                                    <span class="text-grey">+25</span>
+                        <div class="body">
+                            <div>
+                                <p class="label">QUEST NAME</p>
+                                <p class="text">MOTOVS</p>
+                            </div>
+                            <div>
+                                <p class="label">GOAL</p>
+                                <p class="text-grey">BUILD THIS WEBSITE. CREATE A WEBSITE TO COMPARE DIFFERENT MOTORCYCLE STATS</p>
+                            </div>
+                            <div>
+                                <p class="label">REWARDS</p>
+                                <div class="rewards-container">
+                                    <div>
+                                        <img src="/src/assets/img/rewards/5.png" alt="reward +5">
+                                        <span class="text-grey">+5</span>
+                                    </div>
+                                    <div>
+                                        <img src="/src/assets/img/rewards/25.png" alt="reward +25">
+                                        <span class="text-grey">+25</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="bottom">
-                <div :class="{ 'disabled': !soundEffects }">
-                    <p class="text">SOUND EFFECTS</p>
-                    <input v-if="soundEffects" type="button" value="✓" @click="toggleSoundEffects" class="check-btn" />
-                    <input v-else type="button" value="x" @click="toggleSoundEffects" class="check-btn" />
-                </div>
-                <div :class="{ 'disabled': !music }">
-                    <p class="text">MUSIC</p>
-                    <input v-if="music" type="button" value="✓" @click="toggleMusic" class="check-btn" />
-                    <input v-else type="button" value="x" @click="toggleMusic" class="check-btn" />
+                <div class="bottom">
+                    <div :class="{ 'disabled': !soundStore.soundEffects }">
+                        <p class="text">SOUND EFFECTS</p>
+                        <input v-if="soundStore.soundEffects" type="button" value="✓" @click="toggleSoundEffects" class="check-btn" />
+                        <input v-else type="button" value="x" @click="toggleSoundEffects" class="check-btn" />
+                    </div>
+                    <div :class="{ 'disabled': !soundStore.music }">
+                        <p class="text">MUSIC</p>
+                        <input v-if="soundStore.music" type="button" value="✓" @click="toggleMusic" class="check-btn" />
+                        <input v-else type="button" value="x" @click="toggleMusic" class="check-btn" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -272,6 +287,40 @@ header {
         letter-spacing: 1px;
     }
 
+    .top-left, .top-right, .bottom-right, .bottom-left {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+    }
+
+    .top-left {
+        top: -3px;
+        left: -3px;
+        border-top: 3px solid var(--red-primary);
+        border-left: 3px solid var(--red-primary);
+    }
+
+    .top-right {
+        top: -3px;
+        right: -3px;
+        border-top: 3px solid var(--red-primary);
+        border-right: 3px solid var(--red-primary);
+    }
+
+    .bottom-right {
+        bottom: -3px;
+        right: -3px;
+        border-bottom: 3px solid var(--red-primary);
+        border-right: 3px solid var(--red-primary);
+    }
+
+    .bottom-left {
+        bottom: -3px;
+        left: -3px;
+        border-bottom: 3px solid var(--red-primary);
+        border-left: 3px solid var(--red-primary);
+    }
+
     .content-left {
         .top {
             .image-container {
@@ -279,45 +328,11 @@ header {
                 border: 1px solid var(--grey-lower);
                 background-color: transparent;
                 position: relative;
-                margin: 20px 3px;
+                margin: 0 3px 20px;
 
                 img {
                     width: 100%;
                     height: 100%;
-                }
-
-                .top-left, .top-right, .bottom-right, .bottom-left {
-                    position: absolute;
-                    width: 10px;
-                    height: 10px;
-                }
-
-                .top-left {
-                    top: -3px;
-                    left: -3px;
-                    border-top: 3px solid var(--red-primary);
-                    border-left: 3px solid var(--red-primary);
-                }
-
-                .top-right {
-                    top: -3px;
-                    right: -3px;
-                    border-top: 3px solid var(--red-primary);
-                    border-right: 3px solid var(--red-primary);
-                }
-
-                .bottom-right {
-                    bottom: -3px;
-                    right: -3px;
-                    border-bottom: 3px solid var(--red-primary);
-                    border-right: 3px solid var(--red-primary);
-                }
-
-                .bottom-left {
-                    bottom: -3px;
-                    left: -3px;
-                    border-bottom: 3px solid var(--red-primary);
-                    border-left: 3px solid var(--red-primary);
                 }
             }
 
@@ -391,9 +406,9 @@ header {
 
             .text {
                 font-size: 16px;
-                font-family: 'Big Shoulders Display', sans-serif;
+                font-weight: normal;
                 color: var(--grey-primary);
-                letter-spacing: 1px;
+                font-family: 'Iceland', sans-serif;
             }
         }
     }
@@ -482,6 +497,16 @@ header {
             }
         }
     }
-}
 
+    .content-center {
+        width: 65%;
+        height: 83vh;
+        border: 1px solid var(--grey-lower);
+        position: relative;
+
+        .container-router-view {
+            height: 100%;
+        }
+    }
+}
 </style>
