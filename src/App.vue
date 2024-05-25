@@ -21,7 +21,7 @@ import { RouterView } from 'vue-router'
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity: 0.7;
+    opacity: 0.5;
     z-index: -999;
   }
   .video {
