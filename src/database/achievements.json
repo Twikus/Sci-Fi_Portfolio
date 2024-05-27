@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "",
+        "description": "",
+        "status": "legendary",
+        "achieved_at": "01.01.2023"
+    },
+    {
+        "id": 2,
+        "title": "",
+        "description": "",
+        "status": "epic",
+        "achieved_at": "01.01.2023"
+    },
+    {
+        "id": 3,
+        "title": "",
+        "description": "",
+        "status": "rare",
+        "achieved_at": "01.01.2023"
+    },
+    {
+        "id": 4,
+        "title": "",
+        "description": "",
+        "status": "common",
+        "achieved_at": "01.01.2023"
+    }
+]
