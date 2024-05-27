@@ -61,9 +61,11 @@ const active = ref(1);
                 margin: 0 5px;
 
                 &.active {
+                    transition: all 0.2s ease-in-out;
                     border-left: 2px solid var(--red-primary);
-
+                    
                     .label {
+                        transition: all 0.2s ease-in-out;
                         background-color: var(--red-primary-dark);
                     }
                 }

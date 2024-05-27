@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { TransitionFade } from '@morev/vue-transitions';
 import { playClick } from '@/helper'
 import { useSoundStore } from '@/stores/sound';
 
@@ -31,6 +32,10 @@ const toggleSoundEffects = () => {
 const toggleMusic = () => {
     soundStore.toggleMusic()
     playClick(soundStore.music)
+}
+
+const openConnection = () => {
+    window.open('https://www.linkedin.com/in/axel-duquelzar-dev/')
 }
 
 </script>
@@ -98,7 +103,7 @@ const toggleMusic = () => {
                         </li>
                         <li>
                             <p class="label">SOCIAL</p>
-                            <div class="open-connection">
+                            <div class="open-connection" @click="openConnection">
                                 <p>OPEN CONNECTION</p>
                                 <img src="/src/assets/img/open.svg" alt="open in new icon">
                             </div>
@@ -116,7 +121,9 @@ const toggleMusic = () => {
                 <div class="bottom-right"></div>
                 <div class="bottom-left"></div>
                 <div class="container-router-view">
-                    <RouterView />
+                    <transition-fade>
+                        <RouterView />
+                    </transition-fade>
                 </div>
             </div>
             <div class="content-right">
@@ -502,6 +509,7 @@ header {
         width: 65%;
         height: 83vh;
         border: 1px solid var(--grey-lower);
+        background-color: rgba(0, 0, 0, 0.4);
         position: relative;
 
         .container-router-view {
