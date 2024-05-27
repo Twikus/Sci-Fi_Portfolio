@@ -8,7 +8,6 @@
 
 <style lang="scss">
 .beginning-container {
-    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     height: 100%;
     flex-direction: column;

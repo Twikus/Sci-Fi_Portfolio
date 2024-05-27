@@ -509,6 +509,7 @@ header {
         width: 65%;
         height: 83vh;
         border: 1px solid var(--grey-lower);
+        background-color: rgba(0, 0, 0, 0.4);
         position: relative;
 
         .container-router-view {
