@@ -74,7 +74,7 @@ import logs from '@/database/logs.json';
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0 auto;
+            margin: 20px auto 0;
 
             .container-head {
                 width: 100%;
@@ -138,7 +138,7 @@ import logs from '@/database/logs.json';
         }
 
         .older-logs {
-            margin-top: 100px;
+            margin-top: 80px;
 
             .log {
                 border: 1px solid var(--red-primary);
