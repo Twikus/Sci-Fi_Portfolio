@@ -88,7 +88,7 @@ const openConnection = () => {
                         </li>
                         <li>
                             <p class="label">OCCUPATION</p>
-                            <p class="text">WEB DEVELOPER</p>
+                            <p class="text">FULLSTACK WEB DEVELOPER</p>
                         </li>
                         <li>
                             <p class="label">CURRENT CORPORATION</p>
@@ -176,344 +176,346 @@ const openConnection = () => {
 </template>
 
 <style lang="scss" scoped>
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    .header-left, .header-right {
+.layout-container {
+    header {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        height: 70px;
-    }
-
-    .header-left {
-        font-family: 'Big Shoulders Display', sans-serif;
-        font-weight: 700;
-
-        div {
-            display: flex;
-            flex-direction: row;
-            align-items: end;
-            margin-right: 40px;
-
-            span {
-                font-size: 1.5rem;
-                font-weight: bold;
-
-                &.number {
-                    font-size: 26px;
-                    line-height: normal;
-                    color: var(--green-primary);
-                    margin-right: 5px;
-                }
-
-                &.text {
-                    font-size: 16px;
-                    color: var(--grey-primary);
-                    letter-spacing: 1px;
-                    font-weight: 600;
-                }
-            }
-        }
-    }
-
-    .header-right {
-        z-index: 100 !important;
-
-        ul {
+        justify-content: space-between;
+    
+        .header-left, .header-right {
             display: flex;
             flex-direction: row;
             align-items: center;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-
-            li {
-                margin-right: 20px;
-                font-size: 14px;
-                font-weight: 600;
-
-                p {
-                    margin: 0;
-                    padding: 0;
-                    color: var(--grey-primary);
-                    letter-spacing: 2px;
-                }
-
-                span {
-                    color: white;
-                }
-
-                .link {
-                    color: white;
-                    text-decoration: none;
-                    cursor: pointer;
-                }
-            }
+            height: 70px;
         }
-    }
-}
-
-.check-btn {
-    width: 33px;
-    height: 33px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background-color: transparent;
-    border: 1px solid #ffffff5a;
-    color: var(--red-primary);
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    .content-right, .content-left {
-        width: 190px;
-        height: 83vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .label {
-        font-size: 14px;
-    }
-
-    .text {
-        font-size: 18px;
-        font-family: 'Big Shoulders Display', sans-serif;
-        font-weight: 700;
-        color: var(--red-primary);
-        letter-spacing: 1px;
-    }
-
-    .top-left, .top-right, .bottom-right, .bottom-left {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-    }
-
-    .top-left {
-        top: -3px;
-        left: -3px;
-        border-top: 3px solid var(--red-primary);
-        border-left: 3px solid var(--red-primary);
-    }
-
-    .top-right {
-        top: -3px;
-        right: -3px;
-        border-top: 3px solid var(--red-primary);
-        border-right: 3px solid var(--red-primary);
-    }
-
-    .bottom-right {
-        bottom: -3px;
-        right: -3px;
-        border-bottom: 3px solid var(--red-primary);
-        border-right: 3px solid var(--red-primary);
-    }
-
-    .bottom-left {
-        bottom: -3px;
-        left: -3px;
-        border-bottom: 3px solid var(--red-primary);
-        border-left: 3px solid var(--red-primary);
-    }
-
-    .content-left {
-        .top {
-            .image-container {
-                height: 190px;
-                border: 1px solid var(--grey-lower);
-                background-color: transparent;
-                position: relative;
-                margin: 0 3px 20px;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            ul {
-                list-style: none;
-                padding: 0;
-
-                li {
-                    margin-bottom: 20px;
-
-                    p {
+    
+        .header-left {
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-weight: 700;
+    
+            div {
+                display: flex;
+                flex-direction: row;
+                align-items: end;
+                margin-right: 40px;
+    
+                span {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+    
+                    &.number {
+                        font-size: 26px;
+                        line-height: normal;
+                        color: var(--green-primary);
+                        margin-right: 5px;
+                    }
+    
+                    &.text {
+                        font-size: 16px;
+                        color: var(--grey-primary);
                         letter-spacing: 1px;
+                        font-weight: 600;
                     }
                 }
             }
-
-            .open-hire {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-                background-color: var(--red-primary);
-                padding-left: 5px;
-                
-                p {                    
-                    color: black;
-                    font-size: 18px;
-                    font-family: 'Big Shoulders Display', sans-serif;
-                    font-weight: 700;
-                    letter-spacing: 1px;
-                }
-
-                img {
-                    width: 30px;
-                    height: 30px;
-                }
-            }
-
-            .open-connection {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-                border: 2px solid var(--red-primary);
-                padding-left: 5px;
-                cursor: pointer;
-                
-                p {                    
-                    color: var(--red-primary);
-                    font-size: 18px;
-                    font-family: 'Big Shoulders Display', sans-serif;
-                    font-weight: 700;
-                    letter-spacing: 1px;
-                }
-
-                .icon {
-                    width: 30px;
-                    height: 30px;
-                }
-            }
         }
-
-        .bottom {
-            .label {
-                font-size: 18px;
-                color: var(--red-primary);
-                letter-spacing: 1px;
-            }
-
-            .text {
-                font-size: 16px;
-                font-weight: normal;
-                color: var(--grey-primary);
-                font-family: 'Iceland', sans-serif;
+    
+        .header-right {
+            z-index: 100 !important;
+    
+            ul {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+    
+                li {
+                    margin-right: 20px;
+                    font-size: 14px;
+                    font-weight: 600;
+    
+                    p {
+                        margin: 0;
+                        padding: 0;
+                        color: var(--grey-primary);
+                        letter-spacing: 2px;
+                    }
+    
+                    span {
+                        color: white;
+                    }
+    
+                    .link {
+                        color: white;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
             }
         }
     }
-
-    .content-right {
-        .top {
-            .active-quest-container {
-                border-left: 2px solid var(--red-primary);
-
-                .text-grey {
-                    font-size: 14px;
-                    color: var(--grey-primary);
-                }
-
-                .header {
-                    margin-bottom: 10px;
-
-                    .label {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        justify-content: space-between;
+    
+    .check-btn {
+        width: 33px;
+        height: 33px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: transparent;
+        border: 1px solid #ffffff5a;
+        color: var(--red-primary);
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    
+    .main-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    
+        .content-right, .content-left {
+            width: 190px;
+            height: 83vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+    
+        .label {
+            font-size: 14px;
+        }
+    
+        .text {
+            font-size: 18px;
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-weight: 700;
+            color: var(--red-primary);
+            letter-spacing: 1px;
+        }
+    
+        .top-left, .top-right, .bottom-right, .bottom-left {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+        }
+    
+        .top-left {
+            top: -3px;
+            left: -3px;
+            border-top: 3px solid var(--red-primary);
+            border-left: 3px solid var(--red-primary);
+        }
+    
+        .top-right {
+            top: -3px;
+            right: -3px;
+            border-top: 3px solid var(--red-primary);
+            border-right: 3px solid var(--red-primary);
+        }
+    
+        .bottom-right {
+            bottom: -3px;
+            right: -3px;
+            border-bottom: 3px solid var(--red-primary);
+            border-right: 3px solid var(--red-primary);
+        }
+    
+        .bottom-left {
+            bottom: -3px;
+            left: -3px;
+            border-bottom: 3px solid var(--red-primary);
+            border-left: 3px solid var(--red-primary);
+        }
+    
+        .content-left {
+            .top {
+                .image-container {
+                    height: 190px;
+                    border: 1px solid var(--grey-lower);
+                    background-color: transparent;
+                    position: relative;
+                    margin: 0 3px 20px;
+    
+                    img {
                         width: 100%;
-                        background-color: var(--red-primary-dark);
-                        padding-left: 8px;
+                        height: 100%;
+                    }
+                }
+    
+                ul {
+                    list-style: none;
+                    padding: 0;
+    
+                    li {
+                        margin-bottom: 20px;
+    
+                        p {
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+    
+                .open-hire {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    background-color: var(--red-primary);
+                    padding-left: 5px;
+                    
+                    p {                    
+                        color: black;
                         font-size: 18px;
                         font-family: 'Big Shoulders Display', sans-serif;
                         font-weight: 700;
                         letter-spacing: 1px;
                     }
-
-                    .text-grey {
-                        background-color: var(--red-primary-opacity);
-                        padding: 2px 8px;
+    
+                    img {
+                        width: 30px;
+                        height: 30px;
                     }
                 }
-
-                .body {
-                    padding-left: 8px;
-
-                    & > div {
-                        margin-bottom: 20px;
+    
+                .open-connection {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    border: 2px solid var(--red-primary);
+                    padding-left: 5px;
+                    cursor: pointer;
+                    
+                    p {                    
+                        color: var(--red-primary);
+                        font-size: 18px;
+                        font-family: 'Big Shoulders Display', sans-serif;
+                        font-weight: 700;
+                        letter-spacing: 1px;
                     }
-                    .rewards-container {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-
-                        div {
+    
+                    .icon {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+    
+            .bottom {
+                .label {
+                    font-size: 18px;
+                    color: var(--red-primary);
+                    letter-spacing: 1px;
+                }
+    
+                .text {
+                    font-size: 16px;
+                    font-weight: normal;
+                    color: var(--grey-primary);
+                    font-family: 'Iceland', sans-serif;
+                }
+            }
+        }
+    
+        .content-right {
+            .top {
+                .active-quest-container {
+                    border-left: 2px solid var(--red-primary);
+    
+                    .text-grey {
+                        font-size: 14px;
+                        color: var(--grey-primary);
+                    }
+    
+                    .header {
+                        margin-bottom: 10px;
+    
+                        .label {
                             display: flex;
-                            flex-direction: column;
+                            flex-direction: row;
                             align-items: center;
-                            
-                            &:last-child {
-                                margin-left: 8px;
+                            justify-content: space-between;
+                            width: 100%;
+                            background-color: var(--red-primary-dark);
+                            padding-left: 8px;
+                            font-size: 18px;
+                            font-family: 'Big Shoulders Display', sans-serif;
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                        }
+    
+                        .text-grey {
+                            background-color: var(--red-primary-opacity);
+                            padding: 2px 8px;
+                        }
+                    }
+    
+                    .body {
+                        padding-left: 8px;
+    
+                        & > div {
+                            margin-bottom: 20px;
+                        }
+                        .rewards-container {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+    
+                            div {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                
+                                &:last-child {
+                                    margin-left: 8px;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-
-        .bottom {
-            div {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                width: 190px;
-                
-                &:last-child {
-                    margin-top: 5px;
-                }
-
-                &.disabled {
-                    opacity: 0.5;
-                }
-
-                p {
-                    font-size: 18px;
-                    font-family: 'Big Shoulders Display', sans-serif;
-                    font-weight: 700;
-                    color: var(--red-primary);
-                    letter-spacing: 1px;
+    
+            .bottom {
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 190px;
+                    
+                    &:last-child {
+                        margin-top: 5px;
+                    }
+    
+                    &.disabled {
+                        opacity: 0.5;
+                    }
+    
+                    p {
+                        font-size: 18px;
+                        font-family: 'Big Shoulders Display', sans-serif;
+                        font-weight: 700;
+                        color: var(--red-primary);
+                        letter-spacing: 1px;
+                    }
                 }
             }
         }
-    }
-
-    .content-center {
-        width: 65%;
-        height: 83vh;
-        border: 1px solid var(--grey-lower);
-        background-color: rgba(0, 0, 0, 0.4);
-        position: relative;
-
-        .container-router-view {
-            height: 100%;
+    
+        .content-center {
+            width: 65%;
+            height: 83vh;
+            border: 1px solid var(--grey-lower);
+            background-color: rgba(0, 0, 0, 0.4);
+            position: relative;
+    
+            .container-router-view {
+                height: 100%;
+            }
         }
     }
 }

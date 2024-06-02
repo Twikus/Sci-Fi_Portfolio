@@ -15,19 +15,19 @@ const active = ref(1);
             </router-link>
             <router-link to="/logs" class="link" active-class="active" @click="playClick">
                 <span class="label">LOGS</span>
-                <p class="description">SUSCIPIT EST CONSEQUATUR NEMO VOLUPTATEM EST LABORE SAEPE.</p>
+                <p class="description">HIC EST PROFESSIO MEA BACKGROUND (ET STUDIA MEA).</p>
             </router-link>
             <router-link to="/achievements" class="link" active-class="active" @click="playClick">
                 <span class="label">ACHIEVEMENTS</span>
-                <p class="description">SUSCIPIT EST CONSEQUATUR NEMO VOLUPTATEM EST LABORE SAEPE.</p>
+                <p class="description">HIC EST IMAGO MEAE ARTES.</p>
             </router-link>
             <router-link to="/creations" class="link" active-class="active" @click="playClick">
                 <span class="label">CREATIONS</span>
-                <p class="description">SUSCIPIT EST CONSEQUATUR NEMO VOLUPTATEM EST LABORE SAEPE.</p>
+                <p class="description">HIC EST INDEX INCEPTA PERSONALIA MEAE.</p>
             </router-link>
             <router-link to="/contact" class="link" active-class="active" @click="playClick">
                 <span class="label">CONTACT</span>
-                <p class="description">SUSCIPIT EST CONSEQUATUR NEMO VOLUPTATEM EST LABORE SAEPE.</p>
+                <p class="description">PER HANC CONTACTUM FORMAM POTES PERVENIRE AD ME.</p>
             </router-link>
         </nav>
     </div>
