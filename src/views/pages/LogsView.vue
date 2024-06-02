@@ -8,7 +8,7 @@ import logs from '@/database/logs.json';
         <div class="principal-log">
             <div class="container-head">
                 <div>
-                    <p class="title">LOG ENTRY: SPLIIIT SANDWICH COURSE</p>
+                    <p class="title">LOG ENTRY: SPLIIIT SANDWICH COURSE INITIATED</p>
                     <p class="date">DATE: <span>01.09.2022 - 31.08.2024</span></p>
                 </div>
                 <p class="label">LOCATION: <span>ROSIÈRES-PRÉS-TROYES</span></p>
