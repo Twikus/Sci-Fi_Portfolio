@@ -5,8 +5,8 @@ import Home from '@/views/index.vue'
 <template>
   <body>
     <Home />
-    <img src="@/assets/img/layout.png" alt="layout" class="layout" />
     <div class="black-opacity" ></div>
+    <img src="@/assets/img/layout.png" alt="layout" class="layout" />
     <video autoplay loop muted class="video">
       <source src="@/assets/img/background.mp4" type="video/mp4" />
     </video>
@@ -22,8 +22,18 @@ import Home from '@/views/index.vue'
     height: 100%;
     background-color: black;
     opacity: 0.5;
+    z-index: -998;
+  }
+
+  .layout {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
     z-index: -999;
   }
+
   .video {
     position: fixed;
     right: 0;
