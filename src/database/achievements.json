@@ -1,30 +1,47 @@
 [
     {
         "id": 1,
-        "title": "",
-        "description": "",
-        "status": "legendary",
-        "achieved_at": "01.01.2023"
+        "title": "HTML/CSS Proficiency",
+        "image": "src/assets/img/achievements/1.png",
+        "description": "Mastery in creating responsive and accessible web designs.",
+        "type": "common",
+        "status": "achieved",
+        "achieved_at": "01.09.2022"
     },
     {
         "id": 2,
-        "title": "",
-        "description": "",
-        "status": "epic",
-        "achieved_at": "01.01.2023"
+        "title": "JavaScript Expertise",
+        "image": "src/assets/img/achievements/2.png",
+        "description": "Skilled in ES6+, including frameworks like Vue.js.",
+        "type": "rare",
+        "status": "achieved",
+        "achieved_at": "01.09.2023"
     },
     {
         "id": 3,
-        "title": "",
-        "description": "",
-        "status": "rare",
-        "achieved_at": "01.01.2023"
+        "title": "Backend Development",
+        "image": "src/assets/img/achievements/3.png",
+        "description": "Experienced with Laravel, Symfony, and databases such as MySQL.",
+        "type": "epic",
+        "status": "in-progress",
+        "achieved_at": ""
     },
     {
         "id": 4,
-        "title": "",
-        "description": "",
-        "status": "common",
-        "achieved_at": "01.01.2023"
+        "title": "Version Control",
+        "image": "src/assets/img/achievements/4.png",
+        "description": "Proficient in Git, GitHub, and collaborative workflows.",
+        "type": "common",
+        "status": "achieved",
+        "achieved_at": "01.09.2022"
+    },
+    {
+        "id": 5,
+        "title": "Completed 10+ Projects",
+        "image": "src/assets/img/achievements/5.png",
+        "description": "Successfully developed and deployed over 10 web applications.",
+        "type": "legendary",
+        "status": "todo",
+        "achieved_at": ""
     }
 ]
