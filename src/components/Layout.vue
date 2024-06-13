@@ -3,6 +3,7 @@ import { RouterView } from 'vue-router'
 import { TransitionFade } from '@morev/vue-transitions';
 import { playClick } from '@/helper'
 import { useSoundStore } from '@/stores/sound';
+import router from '@/router';
 
 const soundStore = useSoundStore();
 
@@ -26,12 +27,12 @@ const addClick = () => {
 
 const toggleSoundEffects = () => {
     soundStore.toggleSoundEffects()
-    playClick(soundStore.soundEffects)
+    playClick()
 }
 
 const toggleMusic = () => {
     soundStore.toggleMusic()
-    playClick(soundStore.music)
+    playClick()
 }
 
 const openConnection = () => {
@@ -96,10 +97,12 @@ const openConnection = () => {
                         </li>
                         <li>
                             <p class="label">AVAILABILITY</p>
-                            <div class="open-hire">
-                                <p>OPEN FOR HIRE</p>
-                                <img src="/src/assets/img/hire.svg" alt="hire icon">
-                            </div>
+                            <RouterLink to="/contact" class="open-hire-container" @click="playClick">
+                                <div class="open-hire">
+                                    <p>OPEN FOR HIRE</p>
+                                    <img src="/src/assets/img/hire.svg" alt="hire icon">
+                                </div>
+                            </RouterLink>
                         </li>
                         <li>
                             <p class="label">SOCIAL</p>
@@ -357,26 +360,31 @@ const openConnection = () => {
                     }
                 }
     
-                .open-hire {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: space-between;
-                    width: 100%;
-                    background-color: var(--red-primary);
-                    padding-left: 5px;
-                    
-                    p {                    
-                        color: black;
-                        font-size: 18px;
-                        font-family: 'Big Shoulders Display', sans-serif;
-                        font-weight: 700;
-                        letter-spacing: 1px;
-                    }
-    
-                    img {
-                        width: 30px;
-                        height: 30px;
+                .open-hire-container {
+                    text-decoration: none;
+
+                    .open-hire {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        background-color: var(--red-primary);
+                        padding-left: 5px;
+                        cursor: pointer;
+                        
+                        p {                    
+                            color: black;
+                            font-size: 18px;
+                            font-family: 'Big Shoulders Display', sans-serif;
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                        }
+        
+                        img {
+                            width: 30px;
+                            height: 30px;
+                        }
                     }
                 }
     

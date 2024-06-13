@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
 
 interface Sound {
-  isAccepted: boolean
+  soundEffects: boolean
+  music: boolean
 }
 
 export const useSoundStore = defineStore('sound', {
