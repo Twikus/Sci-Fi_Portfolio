@@ -12,6 +12,8 @@
   --grey-middle: rgba(255, 255, 255, 0.5);
   --grey-lighter: rgba(255, 255, 255, 0.2);
   --grey-lower: rgba(255, 255, 255, 0.13);
+  --black: rgba(1, 1, 3, 1);
+  --black-middle: rgba(1, 1, 3, 0.514);
 }
 
 *,
