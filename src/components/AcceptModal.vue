@@ -27,20 +27,26 @@ const accept = () => {
     <Loader v-if="loading" />
   </Transition>
   <Transition name="fade-in" >
-    <main v-if="showContent" class="lp_layout">
-      <div class="first_container">
-        <h1>HI!</h1>
-      </div>
-      <div class="secondary_container">
-        <h2>WELCOME ON MY PERSONAL WEBSITE</h2>
-        <p>I created this website to resemble a game/sci-fi interface, with all the text reflecting this theme.</p>
-        <p>You will find "achievements" or "quests" that show the progress in my professional life and the projects I am currently working on.</p>
-        <div class="button_container">
-          <small>FOR A COMPLETE IMMERSION, VISIT THIS WEBSITE ON COMPUTER</small>
-          <button @click="accept">PLAY</button>
+    <div>
+      <main v-if="showContent" class="lp_layout">
+        <div class="first_container">
+          <h1>HI!</h1>
         </div>
+        <div class="secondary_container">
+          <h2>WELCOME ON MY PERSONAL WEBSITE</h2>
+          <p>I created this website to resemble a game/sci-fi interface, with all the text reflecting this theme.</p>
+          <p>You will find "achievements" or "quests" that show the progress in my professional life and the projects I am currently working on.</p>
+          <div class="button_container">
+            <small>FOR A COMPLETE IMMERSION, VISIT THIS WEBSITE ON COMPUTER</small>
+            <button @click="accept">PLAY</button>
+          </div>
+        </div>
+      </main>
+  
+      <div class="bad-device">
+          <h1>For the moment, the site is only available on computer or large tablet !</h1>
       </div>
-    </main>
+    </div>
   </Transition>
 </template>
 
@@ -114,5 +120,31 @@ const accept = () => {
     }
 
 
+  }
+
+  .bad-device {
+    display: none;
+  }
+
+  @media (max-width: 1310px) {
+      .lp_layout {
+          display: none;
+      }
+
+      .bad-device {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          height: 100vh;
+
+          h1 {
+              font-size: 30px;
+              font-family: 'Big Shoulders Display', sans-serif;
+              font-weight: 700;
+              letter-spacing: 1px;
+          }
+      }
   }
 </style>
