@@ -9,8 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@morev/vue-transitions": "^3.0.2",
+    "pinia": "^2.1.7",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vue3-carousel": "^0.3.3",
+    "vue3-circle-progress": "^1.0.7"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

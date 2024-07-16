@@ -4,6 +4,16 @@
 /* Color variables */
 :root {
   --red-primary : #E84A4A;
+  --red-primary-dark: #b42b2b;
+  --red-primary-opacity: rgba(232, 74, 74, 0.1);
+  --green-primary : #7DFF68;
+  --grey-primary : rgba(255, 255, 255, 0.6);
+  --grey-dark : rgb(45, 45, 45);
+  --grey-middle: rgba(255, 255, 255, 0.5);
+  --grey-lighter: rgba(255, 255, 255, 0.2);
+  --grey-lower: rgba(255, 255, 255, 0.13);
+  --black: rgba(1, 1, 3, 1);
+  --black-middle: rgba(1, 1, 3, 0.514);
 }
 
 *,
@@ -21,5 +31,4 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   color: white;
-  background-color: black;
 }
