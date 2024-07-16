@@ -527,4 +527,10 @@ const openConnection = () => {
         }
     }
 }
+
+@media (max-width: 1310px) {
+    .layout-container {
+        display: none;
+    }
+}
 </style>

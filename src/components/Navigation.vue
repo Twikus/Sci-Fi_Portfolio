@@ -93,4 +93,10 @@ const active = ref(1);
             }
         }
     }
+
+    @media (max-width: 1310px) {
+        .navigation-container {
+            display: none;
+        }
+    }
 </style>
