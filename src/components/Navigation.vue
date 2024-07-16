@@ -94,7 +94,7 @@ const active = ref(1);
         }
     }
 
-    @media (max-width: 1310px) {
+    @media (max-width: 1300px) {
         .navigation-container {
             display: none;
         }

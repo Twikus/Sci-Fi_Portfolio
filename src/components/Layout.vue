@@ -528,7 +528,7 @@ const openConnection = () => {
     }
 }
 
-@media (max-width: 1310px) {
+@media (max-width: 1300px) {
     .layout-container {
         display: none;
     }
