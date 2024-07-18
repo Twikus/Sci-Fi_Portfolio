@@ -94,7 +94,17 @@ const active = ref(1);
         }
     }
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1350px) {
+        .navigation-container {
+            nav {
+                .link {
+                    width: 125px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1250px) {
         .navigation-container {
             display: none;
         }

@@ -130,6 +130,11 @@ const filteredAchievements = computed(() => {
     
         .achievements {
             width: 470px;
+
+            @media (max-width: 1350px) {
+                overflow-y: auto;
+                height: 500px;
+            }
         }
     
         .filters-container {

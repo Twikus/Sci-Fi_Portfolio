@@ -126,7 +126,7 @@ const accept = () => {
     display: none;
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1250px) {
       .lp_layout {
           display: none;
       }

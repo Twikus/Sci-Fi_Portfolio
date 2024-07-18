@@ -6,9 +6,9 @@ import Home from '@/views/index.vue'
   <body>
     <Home />
     <div class="black-opacity" ></div>
-    <img src="@/assets/img/layout.png" alt="layout" class="layout" />
+    <img src="/src/assets/img/layout.png" alt="layout" class="layout" />
     <video autoplay loop muted class="video">
-      <source src="@/assets/img/background.mp4" type="video/mp4" />
+      <source src="/src/assets/img/background.mp4" type="video/mp4" />
     </video>
   </body>
 </template>
