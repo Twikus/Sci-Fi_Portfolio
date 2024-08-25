@@ -3,13 +3,11 @@ import { RouterView } from 'vue-router'
 import { TransitionFade } from '@morev/vue-transitions';
 import { playClick } from '@/helper'
 import { useSoundStore } from '@/stores/sound';
-import router from '@/router';
+import ambient from '@/assets/audio/ambient.mp3';
 
 const soundStore = useSoundStore();
 
 const isClicked = ref(false) 
-const soundEffects = ref(true)
-const music = ref(true)
 const click = ref(109)
 
 let serverTime = ref(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
@@ -43,7 +41,7 @@ const openConnection = () => {
 
 <template>
     <div class="layout-container">
-        <audio src="/src/assets/audio/ambient.mp3" autoplay loop v-if="soundStore.music"/>
+        <audio :src="ambient" autoplay loop v-if="soundStore.music"/>
         <header>
             <div class="header-left">
                 <div>
@@ -528,7 +526,7 @@ const openConnection = () => {
     }
 }
 
-@media (max-width: 1310px) {
+@media (max-width: 1300px) {
     .layout-container {
         display: none;
     }
