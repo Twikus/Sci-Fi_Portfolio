@@ -120,19 +120,34 @@ const accept = () => {
 }
 
 @media (max-width: 1310px) {
-  .bad-device {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
+  .lp_layout {
+    .first_container {
+      display: none;
+    }
 
-    h1 {
-      font-size: 30px;
-      font-family: 'Big Shoulders Display', sans-serif;
-      font-weight: 700;
-      letter-spacing: 1px;
+    .secondary_container {
+      width: 50%;
+      margin-left: 0;
+
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .button_container {
+        small {
+          font-size: 12px;
+        }
+
+        button {
+          width: 220px;
+          font-size: 18px;
+          padding: 8px 16px;
+        }
+      }
     }
   }
 }

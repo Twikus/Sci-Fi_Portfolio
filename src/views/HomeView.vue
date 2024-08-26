@@ -13,6 +13,9 @@ import Navigation from '@/components/Navigation.vue';
 <style lang="scss">
 .body-container {
     margin: 0 40px;
+
+    @media (max-width: 500px) {
+        height: 100vh;
+    }
 }
-   
 </style>
