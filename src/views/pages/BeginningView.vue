@@ -1,6 +1,7 @@
 <template>
     <div class="beginning-container">
-        <h2>NAVIGATING THE NEON CORRIDORS OF INTERSTELLAR DATA STREAMS, BRINGING INNOVATION AND EXCITEMENT TO USERS IN EVERY CORNER OF THE GALAXY.</h2>
+        <h2>NAVIGATING THE NEON CORRIDORS OF INTERSTELLAR DATA STREAMS, BRINGING INNOVATION AND EXCITEMENT TO USERS IN
+            EVERY CORNER OF THE GALAXY.</h2>
         <p>ARTWORK GENERATED WITH MIDJOURNEY</p>
         <img src="/src/assets/img/animal.png" alt="whale">
     </div>
@@ -13,6 +14,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 1024px) {
+        height: min-content;
+    }
 
     h2 {
         font-size: 18px;
