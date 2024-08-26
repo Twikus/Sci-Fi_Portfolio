@@ -528,7 +528,9 @@ const openConnection = () => {
             position: relative;
 
             .container-router-view {
-                height: 100%;
+                height: 60vh;
+                overflow-y: auto;
+                overflow-x: hidden;
             }
         }
     }
@@ -571,5 +573,56 @@ const openConnection = () => {
     }
 }
 
-@media (max-width: 1300px) {}
+@media (min-width: 720px) and (max-width: 1024px) {
+    .layout-container {
+        .main-container {
+            flex-direction: column;
+
+            .content-center {
+                order: 1;
+                width: 100%;
+                height: 100%;
+                margin-bottom: 20px;
+            }
+
+            .content-left {
+                order: 2;
+                width: 100%;
+                height: max-content;
+
+                .top {
+                    display: flex;
+                    flex-direction: row;
+
+                    .image-container {
+                        margin: 0;
+                        height: 140px;
+                        width: 160px;
+                    }
+
+                    ul {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        margin-left: 25px;
+
+                        li {
+                            margin-bottom: 20px;
+                            margin-right: 20px;
+                        }
+                    }
+                }
+
+                .bottom {
+                    display: none;
+                }
+            }
+
+            .content-right {
+                display: none;
+            }
+        }
+    }
+}
 </style>

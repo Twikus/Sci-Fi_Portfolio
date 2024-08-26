@@ -47,23 +47,23 @@ const toggleMusic = () => {
                     <div class="disabled-nav">
                         <h1>Sorry, navigation is disabled on phone...</h1>
                     </div>
-                    <router-link to="/" class="link" active-class="active" @click="playClick">
+                    <router-link to="/" class="link" active-class="active" @click="closeNav">
                         <span class="label">BEGINNING</span>
                         <p class="description">SUSCIPIT EST CONSEQUATUR NEMO VOLUPTATEM EST LABORE SAEPE.</p>
                     </router-link>
-                    <router-link to="/logs" class="link" active-class="active" @click="playClick">
+                    <router-link to="/logs" class="link" active-class="active" @click="closeNav">
                         <span class="label">LOGS</span>
                         <p class="description">HIC EST PROFESSIO MEA BACKGROUND (ET STUDIA MEA).</p>
                     </router-link>
-                    <router-link to="/achievements" class="link" active-class="active" @click="playClick">
+                    <router-link to="/achievements" class="link" active-class="active" @click="closeNav">
                         <span class="label">ACHIEVEMENTS</span>
                         <p class="description">HIC EST IMAGO MEAE ARTES.</p>
                     </router-link>
-                    <router-link to="/creations" class="link" active-class="active" @click="playClick">
+                    <router-link to="/creations" class="link" active-class="active" @click="closeNav">
                         <span class="label">CREATIONS</span>
                         <p class="description">HIC EST INDEX INCEPTA PERSONALIA MEAE.</p>
                     </router-link>
-                    <router-link to="/contact" class="link" active-class="active" @click="playClick">
+                    <router-link to="/contact" class="link" active-class="active" @click="closeNav">
                         <span class="label">CONTACT</span>
                         <p class="description">PER HANC CONTACTUM FORMAM POTES PERVENIRE AD ME.</p>
                     </router-link>
@@ -184,6 +184,19 @@ const toggleMusic = () => {
 }
 
 @media (max-width: 500px) {
+    .disabled-nav {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(61, 61, 61, 0.7);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1024px) {
     .navigation-modal {
         display: flex;
         flex-direction: column;
@@ -207,6 +220,8 @@ const toggleMusic = () => {
         }
 
         .modal-content {
+            overflow-y: auto;
+
             nav {
                 height: 100%;
                 display: flex;
@@ -219,14 +234,7 @@ const toggleMusic = () => {
                 }
 
                 .disabled-nav {
-                    height: 100%;
-                    width: 100%;
-                    background-color: rgba(61, 61, 61, 0.7);
-                    position: absolute;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
+                    display: none;
                 }
 
                 .link {
